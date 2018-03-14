@@ -6,7 +6,8 @@ import router from './router'
 import custom from './components'
 Vue.use(custom)
 Vue.config.productionTip = false
-
+import ElementUI from 'element-ui'
+Vue.use( ElementUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

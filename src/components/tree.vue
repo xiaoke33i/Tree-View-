@@ -8,10 +8,13 @@
 <template>
   <div id="tree">
  <div>
+   <el-collapse-transition>
    <item
    :model="treeData">
    </item>
+   </el-collapse-transition>
  </div>
+
   </div>
 </template>
 
@@ -49,6 +52,7 @@
               ]
             }
           ]
+
         }
       }
     },
@@ -61,6 +65,6 @@
 
 <style scoped>
 .tree{
-padding-left:10px;
+  background-color:blue;
 }
 </style>

@@ -7,28 +7,29 @@
 -->
 <template>
   <div id="item">
-<div>
-  <li>
+
+
     <div
-      :class="{parent: hasChild}"
+      :class="{parent: hasChild, noChil:!hasChild}"
       @click="toggle"
       @dblclick="changeType">
       {{ model.name }}
+      <i class="tabk" v-if="hasChild"></i>
       <span v-if="hasChild">[{{ open ? '-' : '+' }}]</span>
     </div>
-    <ul v-show="open" v-if="hasChild">
+
+    <div v-show="open" v-if="hasChild">
       <item
         v-for="(model, index) in model.children"
         :key="index"
         :model="model"
       >
       </item>
-      <li class="add" @click="addChild">+</li>
-    </ul>
-  </li>
+      <span class="add" @click="addChild">+</span>
+    </div>
+
 </div>
 
-  </div>
 </template>
 
 <script >
@@ -47,7 +48,7 @@
 
       hasChild(){
         return this.model.children && this.model.children.length
-      } // y有子节点 加粗变绿
+      }, // y有子节点 加粗变绿
 
     },
     methods: {
@@ -82,7 +83,10 @@
   }
   .parent {
     font-weight: bold;
-    color: lightseagreen;
+    /*color: lightseagreen;*/
+    background-color: skyblue;
+    position: relative;
+
   }
   ul {
     /*padding-left: 1em;*/
@@ -98,5 +102,19 @@
     height: 20px;
     border:10px solid pink  ;
     border-radius: 10%;
+  }
+  .noChil{
+    background-color: lightgoldenrodyellow;
+
+  }
+  .tabk{
+    position: absolute;
+    top:15px;
+    left:-50px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top: 10px solid sandybrown;
+    position: relative;
   }
 </style>

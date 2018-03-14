@@ -1,0 +1,7 @@
+更新代码
+
+git clone 仓库地址
+git status
+git add --all
+git commmit -m "注释语句"
+git push
