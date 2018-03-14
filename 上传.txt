@@ -1,7 +1,7 @@
-¸üĞÂ´úÂë
+æ›´æ–°ä»£ç 
 
-git clone ²Ö¿âµØÖ·
+git clone ä»“åº“åœ°å€
 git status
 git add --all
-git commmit -m "×¢ÊÍÓï¾ä"
+git commit -m "æ³¨é‡Šè¯­å¥"
 git push
